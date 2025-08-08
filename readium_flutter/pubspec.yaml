@@ -1,0 +1,32 @@
+name: readium_flutter
+description: FlutterアプリケーションでEPUB電子書籍を表示・操作するためのプラグイン
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.8.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        default_package: readium_flutter_android
+      ios:
+        default_package: readium_flutter_ios
+
+dependencies:
+  flutter:
+    sdk: flutter
+  readium_flutter_android:
+    path: ../readium_flutter_android
+  readium_flutter_ios:
+    path: ../readium_flutter_ios
+  readium_flutter_platform_interface:
+    path: ../readium_flutter_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^1.0.4
+  plugin_platform_interface: ^2.1.8
+  very_good_analysis: ^9.0.0

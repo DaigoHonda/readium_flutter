@@ -1,0 +1,28 @@
+name: readium_flutter_android
+description: Android implementation of the readium_flutter plugin
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.8.0
+
+flutter:
+  plugin:
+    implements: readium_flutter
+    platforms:
+      android:
+        package: net.devhonda
+        pluginClass: ReadiumFlutterPlugin
+        dartPluginClass: ReadiumFlutterAndroid
+
+dependencies:
+  flutter:
+    sdk: flutter
+  readium_flutter_platform_interface:
+    path: ../readium_flutter_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.8
+  very_good_analysis: ^9.0.0

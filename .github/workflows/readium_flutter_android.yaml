@@ -1,0 +1,26 @@
+name: readium_flutter_android
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/readium_flutter_android.yaml"
+      - "readium_flutter_android/**"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/readium_flutter_android.yaml"
+      - "readium_flutter_android/**"
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      flutter_channel: stable
+      flutter_version: 3.32.0
+      working_directory: readium_flutter_android
+
